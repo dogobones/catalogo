@@ -75,7 +75,7 @@ function renderProducts(datajson, table) {
           value.clave,
           value.nombre,
           value.marca,
-          '<button id="editar-'+value.id+'-'+value.clave+'-'+value.nombre+'-'+value.marca_id+'" type="button" class="btn btn-warning mr-3 editar">Editar</button>'+
+          '<button id="editar~'+value.id+'~'+value.clave+'~'+value.nombre+'~'+value.marca_id+'" type="button" class="btn btn-warning mr-3 editar">Editar</button>'+
           '<button id="eliminar-'+value.id+'" type="button" class="btn btn-danger eliminar">Eliminar</button>'
       ]);
   });
@@ -130,7 +130,7 @@ $("#addProductForm").on("submit", function(e) {
 //Llenar los inputs del modal de edición
 $(document).on("click", ".editar", function() {
   $('#editProduct').modal('show');
-  let producto = $(this)[0].id.split("-");
+  let producto = $(this)[0].id.split("~");
   $("#editId").val(producto[1]);
   $("#editClave").val(producto[2]);
   $("#editNombre").val(producto[3]);

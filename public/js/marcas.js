@@ -67,7 +67,7 @@ function renderMarcas(datajson, table) {
       vartable.fnAddData([
           value.nombre,
           '<input type="checkbox" '+((value.activa == 1) ? "checked" : "")+' disabled>',
-          '<button id="editar-'+value.id+'-'+value.nombre+'-'+value.activa+'" type="button" class="btn btn-warning mr-3 editar">Editar</button>'+
+          '<button id="editar~'+value.id+'~'+value.nombre+'~'+value.activa+'" type="button" class="btn btn-warning mr-3 editar">Editar</button>'+
           '<button id="eliminar-'+value.id+'" type="button" class="btn btn-danger eliminar">Eliminar</button>'
       ]);
   });
@@ -122,7 +122,7 @@ $("#addMarcaForm").on("submit", function(e) {
 //Llenar los inputs del modal de edición
 $(document).on("click", ".editar", function() {
   $('#editMarca').modal('show');
-  let marca = $(this)[0].id.split("-");
+  let marca = $(this)[0].id.split("~");
   $("#editId").val(marca[1]);
   $("#editNombre").val(marca[2]);
   $("#editActiva").val(marca[3]);
